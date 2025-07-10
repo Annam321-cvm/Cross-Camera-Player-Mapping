@@ -1,0 +1,70 @@
+{
+  "model_path": "yolo11n.pt",
+  "confidence_threshold": 0.5,
+  "similarity_threshold": 0.7,
+  "max_disappear_frames": 30,
+  "id_stability_frames": 10,
+  "cross_camera_similarity_threshold": 0.8,
+  "camera_sync_settings": {
+    "sync_tolerance_frames": 2,
+    "temporal_matching_window": 5,
+    "position_matching_weight": 0.3,
+    "feature_matching_weight": 0.7
+  },
+  "output_settings": {
+    "fps": 30,
+    "codec": "mp4v",
+    "quality": "high",
+    "resolution": "original",
+    "include_metadata": true
+  },
+  "display_settings": {
+    "show_confidence": true,
+    "show_camera_labels": true,
+    "show_player_trails": false,
+    "label_font_size": 0.8,
+    "box_thickness": 3,
+    "label_background_opacity": 0.8
+  },
+  "tracking_optimization": {
+    "enable_cross_camera_matching": true,
+    "enable_temporal_smoothing": true,
+    "enable_position_prediction": true,
+    "max_prediction_frames": 5
+  },
+  "camera_calibration": {
+    "camera1": {
+      "name": "broadcast",
+      "resolution": [1920, 1080],
+      "fps": 30,
+      "field_of_view": 45,
+      "position": "overhead"
+    },
+    "camera2": {
+      "name": "tactical",
+      "resolution": [1920, 1080],
+      "fps": 30,
+      "field_of_view": 60,
+      "position": "side"
+    }
+  },
+  "performance_settings": {
+    "enable_gpu_acceleration": true,
+    "max_parallel_processes": 4,
+    "memory_limit_mb": 4096,
+    "enable_caching": true
+  },
+  "logging": {
+    "level": "INFO",
+    "log_to_file": true,
+    "log_directory": "logs",
+    "max_log_size_mb": 100
+  },
+  "export_options": {
+    "save_tracking_data": true,
+    "export_format": "json",
+    "include_bounding_boxes": true,
+    "include_features": false,
+    "export_statistics": true
+  }
+}
